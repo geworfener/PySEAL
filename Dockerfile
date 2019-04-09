@@ -45,6 +45,13 @@ WORKDIR /SEAL/SEALPython
 RUN python3 setup.py build_ext -i
 ENV PYTHONPATH $PYTHONPATH:/SEAL/SEALPython:/SEAL/bin
 
+# Install numpy, sklearn
+RUN pip3 install numpy
+RUN pip3 install sklearn
+
+# Copy using_pyseal
+COPY /using_pyseal /SEAL/using_pyseal
+
 # Return to SEAL root directory
 WORKDIR /SEAL
 
