@@ -26,21 +26,22 @@ Moreover, to get started easily, `homenc.py` provides
 - Easy encoding/encryption/decryption (of scalars and numpy arrays) via helper methods.
 - Easy math operations with encrypted data type via overloaded mathematical operators.
 
+```
+from using_pyseal import homenc as he
 
-    from using_pyseal import homenc as he
-    
-    he.initialize_fractional()
+he.initialize_fractional()
 
-    x = 12
-    y = 4
-    x_enc = he.encrypt(x)
-    y_enc = he.encrypt(y)
-    
-    r = x + y
-    r_enc = x_enc + y_enc
-    r_dec = he.decrypt(r_enc)
-    
-    assertEqual(r, r_dec)
+x = 12
+y = 4
+x_enc = he.encrypt(x)
+y_enc = he.encrypt(y)
+
+r = x + y
+r_enc = x_enc + y_enc
+r_dec = he.decrypt(r_enc)
+
+assertEqual(r, r_dec)
+```
 
 For further examples see `test_homenc.py` and `binlogreg.py`.
 
