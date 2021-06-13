@@ -1,7 +1,7 @@
 #
 # Container to build Linux SEAL libraries, python wrapper, and examples
 #
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 MAINTAINER Todd Stavish <toddstavish@gmail.com>
 
 # Install binary dependencies
@@ -51,6 +51,9 @@ RUN pip3 install sklearn
 
 # Copy using_pyseal
 COPY /using_pyseal /SEAL/using_pyseal
+
+# Add placeholder for notebooks directory to be mounted
+VOLUME /notebooks
 
 # Return to SEAL root directory
 WORKDIR /SEAL
